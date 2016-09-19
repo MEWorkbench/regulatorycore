@@ -39,4 +39,22 @@ public class RegulatorySolution extends AbstractSolution {
 		
 	}
 
+	@Override
+	public String toStringHumanReadableGC(String delimiter) {
+		GeneChangesList geneChangesList = solutionGeneticConditions.getGeneList();
+		if(geneChangesList!=null && geneChangesList.size()>0){
+			List<String> geneKnockoutList = geneChangesList.getGeneKnockoutList();
+			
+			StringBuilder sb = new StringBuilder();
+			for(int i=0; i<geneKnockoutList.size(); i++){
+				sb.append(geneKnockoutList.get(i));
+				if(i<geneKnockoutList.size()){
+					sb.append(delimiter);
+				}
+			}
+			return sb.toString();			
+		}
+		return "";
+	}
+
 }
