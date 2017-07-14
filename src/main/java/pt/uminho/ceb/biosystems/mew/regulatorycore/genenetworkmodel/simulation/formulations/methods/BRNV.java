@@ -182,7 +182,7 @@ public class BRNV extends AbstractRegulatoryNetworkSimulation{
 			RegulatoryRule rule = model.getRegulatoryRule(i);
 			
 			if (rule.getBooleanRule().getRootNode() != null) {
-				boolean value = rule.getBooleanRule().evaluate(environment).getBooleanValue();
+				boolean value = (boolean) rule.getBooleanRule().evaluate(environment).getValue();
 				iteration.add(value);
 
 			} else{
