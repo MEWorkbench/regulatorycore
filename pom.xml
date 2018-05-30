@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pt.uminho.ceb.biosystems.mew</groupId>
 	<artifactId>mew-regulatorycore</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>regulatorycore</name>
 	<url>http://maven.apache.org</url>
 	
@@ -13,6 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		<meworkbench.version>1.0.2-SNAPSHOT</meworkbench.version>
 	</properties>
 	
 	<dependencies>
@@ -26,7 +27,7 @@
 		<dependency>
 			<groupId>pt.uminho.ceb.biosystems.mew</groupId>
 			<artifactId>mew-core</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
+			<version>${meworkbench.version}</version>
 		</dependency>
 		
 		<dependency>
