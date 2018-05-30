@@ -17,7 +17,6 @@ import pt.uminho.ceb.biosystems.mew.core.simulation.formulations.exceptions.Mand
 import pt.uminho.ceb.biosystems.mew.core.simulation.formulations.exceptions.PropertyCastException;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.components.RegulatoryGeneticConditions;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.components.RegulatorySimulationProperties;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 
 public abstract class AbstractTwoStepIntegratedSimulation implements ISteadyStateSimulationMethod, Serializable{
 
@@ -217,9 +216,9 @@ public abstract class AbstractTwoStepIntegratedSimulation implements ISteadyStat
 		this.propreties.putAll(properties);
 	}
 	
-    public SolverType getSolverType()throws PropertyCastException, MandatoryPropertyException {
+    public String getSolverType()throws PropertyCastException, MandatoryPropertyException {
 	    
-		return (SolverType) ManagerExceptionUtils.testCast(propreties, SolverType.class, RegulatorySimulationProperties.SOLVER, true);
+		return (String) ManagerExceptionUtils.testCast(propreties, String.class, RegulatorySimulationProperties.SOLVER, true);
 	}
 	
 

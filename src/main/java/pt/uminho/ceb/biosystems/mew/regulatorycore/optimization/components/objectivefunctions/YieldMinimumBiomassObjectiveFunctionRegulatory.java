@@ -17,7 +17,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.components.Va
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.components.IntegratedSimulationMethods;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.controlcenter.IntegratedSimulationControlCenter;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.results.IntegratedSimulationResult;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 import pt.uminho.ceb.biosystems.mew.utilities.math.MathUtils;
 
 public class YieldMinimumBiomassObjectiveFunctionRegulatory extends AbstractObjectiveFunction 
@@ -34,7 +33,7 @@ public class YieldMinimumBiomassObjectiveFunctionRegulatory extends AbstractObje
 	String biomassId; 
 	String desiredFluxId;
 	protected final double worstFitness = Double.NEGATIVE_INFINITY;
-	protected SolverType solver;
+	protected String solver;
 
 	protected double minimumBiomassPercentage = 0.1;
 	protected double minimumBiomassValue = 0.0;
@@ -58,7 +57,7 @@ public class YieldMinimumBiomassObjectiveFunctionRegulatory extends AbstractObje
 		super(configuration);
 	}
 
-	public YieldMinimumBiomassObjectiveFunctionRegulatory(String biomassId, String desiredFluxId, double minimumBiomass, SolverType solver) 
+	public YieldMinimumBiomassObjectiveFunctionRegulatory(String biomassId, String desiredFluxId, double minimumBiomass, String solver) 
 	{
 		this.biomassId = biomassId;
 		this.desiredFluxId = desiredFluxId;

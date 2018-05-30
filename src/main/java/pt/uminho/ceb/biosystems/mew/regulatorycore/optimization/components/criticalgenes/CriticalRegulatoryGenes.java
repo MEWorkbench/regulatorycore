@@ -24,7 +24,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.co
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.controlcenter.IntegratedSimulationControlCenter;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.results.IntegratedSimulationResult;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.status.StatusHandlerCriticalgenes;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 
 public class CriticalRegulatoryGenes implements Serializable{
 
@@ -42,7 +41,7 @@ public class CriticalRegulatoryGenes implements Serializable{
 	protected String biomassFlux;
 	protected FluxValueMap wildTypeFluxes = null;
 	protected double wildtypebiomassflux;
-	protected SolverType solvertype;
+	protected String solvertype;
 	protected VariablesContainer vars = null;
 	protected boolean debug = false;
 	protected int CurrentIteration = 0;
@@ -52,7 +51,7 @@ public class CriticalRegulatoryGenes implements Serializable{
 
 	
 
-	public CriticalRegulatoryGenes(IIntegratedStedystateModel model, EnvironmentalConditions envConditions,ArrayList<String>  trueVariables , HashSet<String> falseNodesInInitialStep,String IntegratedSimMethod,String metabolicSimMethod,String regNetSimMethod , SolverType solver) throws Exception 
+	public CriticalRegulatoryGenes(IIntegratedStedystateModel model, EnvironmentalConditions envConditions,ArrayList<String>  trueVariables , HashSet<String> falseNodesInInitialStep,String IntegratedSimMethod,String metabolicSimMethod,String regNetSimMethod , String solver) throws Exception 
 	{
 		this.model = model;		
 		this.envConditions = envConditions;
@@ -143,7 +142,7 @@ public class CriticalRegulatoryGenes implements Serializable{
 	}
 
 
-	public void setSolver(SolverType solver) {
+	public void setSolver(String solver) {
 		center.setSolver(solver);
 	}
 

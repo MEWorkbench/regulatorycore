@@ -19,7 +19,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.co
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.results.IntegratedSimulationResult;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.results.RegulatorySolution;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.results.RegulatorySolutionSet;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 
 public class RegulatorySolutionSimplification implements Serializable{
 	
@@ -43,7 +42,7 @@ public class RegulatorySolutionSimplification implements Serializable{
 			VariablesContainer variables,
 			HashSet<String> falsenodes, 
 			EnvironmentalConditions envCond, 
-			SolverType solver)
+			String solver)
 	{
 		this.model = model;
 		this.objectiveFunctions = objFunctions;
@@ -53,7 +52,7 @@ public class RegulatorySolutionSimplification implements Serializable{
 	}
 	
 
-	public void setSolver(SolverType solver) {
+	public void setSolver(String solver) {
 		center.setSolver(solver);
 	}
 	

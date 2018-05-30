@@ -72,7 +72,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.components.decod
 import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.components.evaluationfunctions.RegulatoryGeneKnockoutEvaluationFunction;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.results.RegulatorySolution;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.optimization.results.RegulatorySolutionSet;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 
 public class RegulatoryGeneKnockoutOptimizationControlCenter {
 	
@@ -100,7 +99,7 @@ public class RegulatoryGeneKnockoutOptimizationControlCenter {
 
 	protected IRandomNumberGenerator randomGenerator;
 	
-	protected SolverType solver;
+	protected String solver;
 	
 	protected List<String> notAllowedIDs;
 	
@@ -125,7 +124,7 @@ public class RegulatoryGeneKnockoutOptimizationControlCenter {
 			boolean variableSize,
 			int maxSolutionSize, 
 			AlgorithmTypeEnum optimizationMethod,
-			SolverType solver, 
+			String solver, 
 			List<String> notAllowedIDs,
 			EnvironmentalConditions environmentalConditions,
 			IConfiguration<IElementsRepresentation<?>> algorithmConfiguration,
@@ -181,7 +180,7 @@ public class RegulatoryGeneKnockoutOptimizationControlCenter {
 	}
 	
 	
-	public void createEvaluationFunction(EnvironmentalConditions envConds, ISteadyStateDecoder decoder, List<IObjectiveFunction> ofs, VariablesContainer varscontainer,String simulationMethod, String metabolicsimulmethod,String regulatorynetowrksimulmethod, HashSet<String> initialFalseNodes,SolverType solv) throws Exception {
+	public void createEvaluationFunction(EnvironmentalConditions envConds, ISteadyStateDecoder decoder, List<IObjectiveFunction> ofs, VariablesContainer varscontainer,String simulationMethod, String metabolicsimulmethod,String regulatorynetowrksimulmethod, HashSet<String> initialFalseNodes,String solv) throws Exception {
 		this.evaluationFunction = new RegulatoryGeneKnockoutEvaluationFunction(model,decoder, ofs, envConds, varscontainer, simulationMethod, metabolicsimulmethod,regulatorynetowrksimulmethod ,initialFalseNodes,solv);
 	}
     
@@ -548,7 +547,7 @@ public class RegulatoryGeneKnockoutOptimizationControlCenter {
 		 * 
 		 * @throws OverUnderReferenceComputationException if any problem occurs when calculating the flux distribution
 		 */
-		public Map<String,Double> computeOverUnderReferenceDistribution(String simulationMethod,EnvironmentalConditions envCond, ISteadyStateModel model, String metabsimulationMethod, VariablesContainer variables, HashSet<String> falsenodes, SolverType solverType ) /*throws OverUnderReferenceComputationException*/{
+		public Map<String,Double> computeOverUnderReferenceDistribution(String simulationMethod,EnvironmentalConditions envCond, ISteadyStateModel model, String metabsimulationMethod, VariablesContainer variables, HashSet<String> falsenodes, String solverType ) /*throws OverUnderReferenceComputationException*/{
 			IntegratedSimulationControlCenter intSimCC = new IntegratedSimulationControlCenter(envCond, null, model, simulationMethod, metabsimulationMethod,regulatorynetowrksimulationmethod, variables, falsenodes, true,solverType);
 
 			Map<String,Double> result = null;
@@ -617,14 +616,14 @@ public class RegulatoryGeneKnockoutOptimizationControlCenter {
 		/**
 		 * @return the solver
 		 */
-		public SolverType getSolver() {
+		public String getSolver() {
 			return solver;
 		}
 
 		/**
 		 * @param solver the solver to set
 		 */
-		public void setSolver(SolverType solver) {
+		public void setSolver(String solver) {
 			this.solver = solver;
 		}
 		

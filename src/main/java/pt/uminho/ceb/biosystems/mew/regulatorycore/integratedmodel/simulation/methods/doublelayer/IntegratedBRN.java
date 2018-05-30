@@ -23,7 +23,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.co
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.components.RegulatorySimulationProperties;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.methods.doublelayer.abstractions.AbstractTwoStepIntegratedSimulation;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.results.IntegratedSimulationResult;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 import pt.uminho.ceb.biosystems.mew.utilities.datastructures.map.indexedhashmap.IndexedHashMap;
 
 public class IntegratedBRN extends AbstractTwoStepIntegratedSimulation implements Serializable{
@@ -60,7 +59,7 @@ public class IntegratedBRN extends AbstractTwoStepIntegratedSimulation implement
     
     protected HashSet<String> initialfalsenodes;
     
-    protected SolverType solver;
+    protected String solver;
     
     
 /**
@@ -83,7 +82,7 @@ public class IntegratedBRN extends AbstractTwoStepIntegratedSimulation implement
      * @throws PropertyCastException the property cast exception
      * @throws MandatoryPropertyException the mandatory property exception
      */
-    public IntegratedBRN(ISteadyStateModel model, SolverType solver) {
+    public IntegratedBRN(ISteadyStateModel model, String solver) {
     	super(model);
         initBRNpossiblekeys();
         setSolver(solver);
@@ -320,11 +319,11 @@ return integratedmodel;
 //	
 //}
 
-public void setSolver(SolverType solver){
+public void setSolver(String solver){
 	this.solver = solver;
 }
 
-public SolverType getSolver(){
+public String getSolver(){
 	return this.solver;
 }
 

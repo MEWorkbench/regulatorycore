@@ -19,7 +19,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.co
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.components.RegulatorySimulationProperties;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.controlcenter.IntegratedSimulationControlCenter;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.results.IntegratedSimulationResult;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 import pt.uminho.ceb.biosystems.mew.solvers.lp.LPSolutionType;
 
 public class RegulatoryGeneKnockoutEvaluationFunction extends AbstractMultiobjectiveEvaluationFunction<IRepresentation> implements IOptimizationEvaluationFunction {
@@ -40,7 +39,7 @@ public class RegulatoryGeneKnockoutEvaluationFunction extends AbstractMultiobjec
 	
 	protected int numberOfObjectives = 1;
 	
-	protected SolverType solver;
+	protected String solver;
 	
 	protected String simulationMethod;
 	
@@ -66,7 +65,7 @@ public class RegulatoryGeneKnockoutEvaluationFunction extends AbstractMultiobjec
 			String metabolicsimulationmethod,
 			String regulatorysimulationMet,
 			HashSet<String> initialFalseNodes,
-			SolverType solver) {
+			String solver) {
 		this.model = model;
 		this.decoder = decoder;
 		this.objectiveFunctions = objectiveFunctions;
@@ -87,7 +86,7 @@ public class RegulatoryGeneKnockoutEvaluationFunction extends AbstractMultiobjec
 		return decoder;
 	}
 	
-	public void setSolver(SolverType solver) {
+	public void setSolver(String solver) {
 		controlCenter.setSolver(solver);
 	}
 	

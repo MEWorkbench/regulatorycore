@@ -18,7 +18,6 @@ import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.co
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.methods.SRFBA;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.methods.doublelayer.IntegratedBRN;
 import pt.uminho.ceb.biosystems.mew.regulatorycore.integratedmodel.simulation.results.IntegratedSimulationResult;
-import pt.uminho.ceb.biosystems.mew.solvers.SolverType;
 
 public class IntegratedSimulationControlCenter extends AbstractSimulationSteadyStateControlCenter implements Serializable{
 	
@@ -70,7 +69,7 @@ public class IntegratedSimulationControlCenter extends AbstractSimulationSteadyS
 			VariablesContainer variables,
 			HashSet<String> falsenodes,
 			boolean isMaximization,
-			SolverType solver 
+			String solver 
 			) {
 		super(environmentalConditions, geneticConditions, model, methodType);
 
@@ -111,7 +110,7 @@ public class IntegratedSimulationControlCenter extends AbstractSimulationSteadyS
 	 *
 	 * @param solverType the new solver
 	 */
-	public void setSolver(SolverType solverType){
+	public void setSolver(String solverType){
 		addProperty(RegulatorySimulationProperties.SOLVER, solverType);	
 	}
 	
