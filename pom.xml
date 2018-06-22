@@ -5,15 +5,29 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pt.uminho.ceb.biosystems.mew</groupId>
 	<artifactId>mew-regulatorycore</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>${meworkbench.version}</version>
 	<name>regulatorycore</name>
 	<url>http://maven.apache.org</url>
+	
+	
+	<licenses>
+		<license>
+			<name>LGPLv2.1</name>
+			<url>https://www.gnu.org/licenses/lgpl-2.1.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<scm>
+		<developerConnection>${project.scm.devcon}</developerConnection>
+		<url>https://github.com/MEWorkbench/mewcore</url>
+	</scm>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-		<meworkbench.version>1.0.2-SNAPSHOT</meworkbench.version>
+		<meworkbench.version>1.1.0-SNAPSHOT</meworkbench.version>
 	</properties>
 	
 	<dependencies>
@@ -45,23 +59,20 @@
 	
 	<repositories>
 		<repository>
-			<id>tbiosystems-snapshots</id>
-			<url>http://193.137.11.210/nexus/content/repositories/biosystems-snapshots</url>
-		</repository>
-		<repository>
-			<id>biosystems-releases</id>
-			<url>http://193.137.11.210/nexus/content/repositories/biosystems-releases</url>
+			<id>snapshots</id>
+			<name>maven snapshots repo</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</repository>
 	</repositories>
-	
+
 	<distributionManagement>
-		<snapshotRepository>
-			<id>biosystems-snapshots</id>
-			<url>http://193.137.11.210/nexus/content/repositories/biosystems-snapshots</url>
-		</snapshotRepository>
 		<repository>
-			<id>biosystems-releases</id>
-			<url>http://193.137.11.210/nexus/content/repositories/biosystems-releases</url>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
+		<snapshotRepository>
+			<id>oss.sonatype.org</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>
