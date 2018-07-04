@@ -7,8 +7,17 @@
 	<artifactId>mew-regulatorycore</artifactId>
 	<version>${meworkbench.version}</version>
 	<name>regulatorycore</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/MEWorkbench/mewcore</url>
+	<description>regulatory package for meworkbench</description>
 	
+	<developers>
+		<developer>
+			<name>Paulo Vilaca</name>
+			<email>pvilaca@silicolife.com</email>
+			<organization>SilicoLife Lda</organization>
+			<organizationUrl>http://www.silicolife.com</organizationUrl>
+		</developer>
+	</developers>
 	
 	<licenses>
 		<license>
@@ -19,8 +28,8 @@
 	</licenses>
 	
 	<scm>
-		<developerConnection>${project.scm.devcon}</developerConnection>
-		<url>https://github.com/MEWorkbench/mewcore</url>
+		<developerConnection>git@github.com:MEWorkbench/regulatorycore.git</developerConnection>
+		<url>https://github.com/MEWorkbench/regulatorycore</url>
 	</scm>
 	
 	<properties>
